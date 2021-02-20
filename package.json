@@ -6,8 +6,11 @@
     "node": ">=12"
   },
   "devDependencies": {
+    "@aws-cdk/assert": "^1.90.1",
+    "@aws-cdk/core": "^1.90.1",
     "@types/jest": "^26.0.14",
     "@zeit/ncc": "^0.22.3",
+    "aws-cdk": "^1.90.1",
     "aws-sdk": "^2.761.0",
     "eslint": "^7.10.0",
     "eslint-config-prettier": "^6.12.0",
