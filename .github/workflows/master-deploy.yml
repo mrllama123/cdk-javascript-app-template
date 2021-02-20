@@ -1,0 +1,63 @@
+# name: Serverless Deploy
+# on:
+#   push:
+#     branches:
+#       - master
+# env:
+#   REGION: ap-southeast-2
+# jobs:
+#   integrate:
+#     name: Integrate deploy
+#     runs-on: ubuntu-latest
+#     env:
+#       ENV: int
+#       ROLE: arn:aws:iam::<AWS ACCOUNT NAME>:role/<REPO-NAME-HERE>_github_role
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#         with:
+#           persist-credentials: true
+#       - name: Configure AWS Credentials
+#         uses: aws-actions/configure-aws-credentials@v1
+#         with:
+#           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#           aws-region: ${{ env.REGION }}
+#           role-to-assume: ${{ env.ROLE }}
+#           role-duration-seconds: 1200
+#       - name: Setup nodejs
+#         uses: actions/setup-node@v1
+#         with:
+#           node-version: '12.x'
+#       - name: Install dependencies
+#         run: yarn --frozen-lockfile
+#       - name: Serverless deploy
+#         run: npx serverless@2.4.0 deploy --stage ${{ env.ENV }}
+
+#   prod:
+#     name: Production deploy
+#     runs-on: ubuntu-latest
+#     env:
+#       ENV: prod
+#       ROLE: arn:aws:iam::<AWS ACCOUNT ID>:role/<REPO-NAME-HERE>_github_role
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#         with:
+#           persist-credentials: true
+#       - name: Configure AWS Credentials
+#         uses: aws-actions/configure-aws-credentials@v1
+#         with:
+#           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#           aws-region: ${{ env.REGION }}
+#           role-to-assume: ${{ env.ROLE }}
+#           role-duration-seconds: 1200
+#       - name: Setup nodejs
+#         uses: actions/setup-node@v1
+#         with:
+#           node-version: '12.x'
+#       - name: Install dependencies
+#         run: yarn --frozen-lockfile
+#       - name: Serverless deploy
+#         run: npx serverless@2.4.0 deploy --stage ${{ env.ENV }}

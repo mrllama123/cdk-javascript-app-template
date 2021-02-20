@@ -1,0 +1,36 @@
+# name: Deploy to dev
+# on:
+#   pull_request:
+#     types:
+#       - labeled
+#   workflow_dispatch:
+# jobs:
+#   dev-deploy:
+#     name: Test deploy
+#     runs-on: ubuntu-latest
+#     if: contains( github.event.pull_request.labels.*.name, 'deploy dev') || ${{ github.event_name == 'workflow_dispatch' }}
+#     env:
+#       ENV: dev
+#       ROLE: arn:aws:iam::<AWS ACCOUNT NAME>:role/<REPO-NAME-HERE>_github_role
+#       REGION: ap-southeast-2
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#         with:
+#           persist-credentials: true
+#       - name: Configure AWS Credentials
+#         uses: aws-actions/configure-aws-credentials@v1
+#         with:
+#           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#           aws-region: ${{ env.REGION }}
+#           role-to-assume: ${{ env.ROLE }}
+#           role-duration-seconds: 1200
+#       - name: Setup nodejs
+#         uses: actions/setup-node@v1
+#         with:
+#           node-version: '12.x'
+#       - name: Install dependencies
+#         run: yarn --frozen-lockfile
+#       - name: Serverless deploy
+#         run: npx serverless@2.4.0 deploy --stage ${{ env.ENV }}

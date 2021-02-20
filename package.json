@@ -1,0 +1,46 @@
+{
+  "name": "trove-js-base-serverless",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=12"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.14",
+    "@zeit/ncc": "^0.22.3",
+    "aws-sdk": "^2.761.0",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-jest-formatting": "^2.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2",
+    "serverless-iam-roles-per-function": "^2.0.2",
+    "serverless-plugin-ncc": "^0.4.0",
+    "serverless-plugin-warmup": "^4.9.0",
+    "serverless-prune-plugin": "^1.4.3"
+  },
+  "dependencies": {
+    "aws-xray-sdk-core": "^3.2.0"
+  },
+  "scripts": {
+    "test": "jest --runInBand --colors",
+    "test:watch": "jest --runInBand --colors --watchAll",
+    "test:ci": "jest --ci",
+    "lint": "eslint '**/*.js' --color --ignore-pattern node_modules/",
+    "lint:fix": "eslint '**/*.js' --fix --color --ignore-pattern node_modules/",
+    "lint:check": "eslint --print-config .eslintrc | eslint-config-prettier-check"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix"
+  }
+}

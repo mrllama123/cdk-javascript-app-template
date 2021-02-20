@@ -1,0 +1,84 @@
+service: service-name
+
+frameworkVersion: '>=1.2.0'
+
+plugins:
+  - serverless-iam-roles-per-function
+  - serverless-plugin-warmup
+  - serverless-prune-plugin
+  - serverless-plugin-ncc
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: ${opt:region, 'ap-southeast-2'}
+  stage: ${opt:stage, 'dev'}
+  memorySize: 512
+  logRetentionInDays: 30
+
+  tracing:
+    lambda: true
+
+  tags:
+    Environment: ${self:provider.stage}
+    Repository: ${self:service}
+    DeployedWith: Serverless
+
+  iamRoleStatements:
+    # - Effect: Allow
+    #   Action:
+    #     - sqs:SendMessage
+    #   Resource:
+    #     - <dlq arn for failed events>
+    - Effect: Allow
+      Action:
+        - logs:CreateLogGroup
+        - logs:CreateLogStream
+        - logs:PutLogEvents
+        - xray:PutTraceSegments
+        - xray:PutTelemetryRecords
+      Resource: '*'
+
+package:
+  individually: true
+  exclude:
+    - '**'
+    - '!lambdas/**'
+
+functions:
+  example-api-gateway:
+    handler: lambdas/example-api-gateway.handler
+  example-eventbridge:
+    handler: lambdas/example-eventbridge.handler
+    environment:
+      EVENT_BUS_NAME: event-bus
+      SOURCE: source
+    maximumEventAge: 1800
+    maximumRetryAttempts: 2
+    # destinations:
+    #   onFailure: <dlq arn for failed events>
+    # iamRoleStatementsInherit: true
+    # iamRoleStatements:
+    #   - Effect: Allow
+    #     Action:
+    #       - events:PutEvents
+    #     Resource: <eventbus arn>
+    # events:
+    #   - eventBridge:
+    #       eventBus: <EventBusArn>
+    #       pattern:
+    #         source:
+    #           - example.test
+    #         detail:
+    #           status:
+    #             - pending
+
+custom:
+  warmup:
+    enabled: true
+  prune:
+    automatic: true
+    number: 3
+  ncc:
+    minify: true
+    externals: ['aws-sdk']
