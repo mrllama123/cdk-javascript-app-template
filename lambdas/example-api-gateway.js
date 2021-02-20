@@ -1,4 +1,4 @@
-const handlerWrapper = require('../libs/http-handler-wrapper');
+const handlerWrapper = require('./libs/http-handler-wrapper');
 
 module.exports.handler = handlerWrapper(async (event) => {
   const { paramX } = event.body;

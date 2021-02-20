@@ -1,5 +1,5 @@
-const AWS = require('../libs/aws-sdk');
-const handlerWrapper = require('../libs/handler-wrapper');
+const AWS = require('./libs/aws-sdk');
+const handlerWrapper = require('./libs/handler-wrapper');
 
 // initialize SDK clients and database connections outside of the function handler
 const eventBridge = new AWS.EventBridge();
