@@ -22,6 +22,7 @@ const createNodejsLambda = ({
     entry: path.resolve(lambdaCodePath),
     maxEventAge,
     retryAttempts,
+    tracing: cdkLambda.Tracing.ACTIVE,
   });
   // add xray permissions
   lambda.addToRolePolicy(
