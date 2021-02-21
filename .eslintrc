@@ -20,7 +20,7 @@
     "node/no-unpublished-require": [
       "error",
       {
-        "allowModules": ["aws-sdk"]
+        "allowModules": ["aws-sdk", "@aws-cdk"]
       }
     ]
   }
