@@ -1,4 +1,4 @@
-const { handler } = require('../../../lambdas/example-api-gateway');
+const { handler } = require('../../../../lambdas/example-api-gateway');
 
 describe('handler', () => {
   it('should return statusCode body and cors headers - success', async () => {

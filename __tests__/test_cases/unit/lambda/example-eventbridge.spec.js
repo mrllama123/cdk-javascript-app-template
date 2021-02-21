@@ -2,9 +2,9 @@ const { mockEventBridgePutEvents } = require('aws-sdk/clients/eventbridge');
 const {
   handler,
   doSomeBusinessLogic,
-} = require('../../../lambdas/example-eventbridge');
+} = require('../../../../lambdas/example-eventbridge');
 
-const eventInputTest = require('../../../events/test-event.json');
+const eventInputTest = require('../../../../events/test-event.json');
 
 describe('doSomeBusinessLogic', () => {
   it('should return an object with status done', async () => {

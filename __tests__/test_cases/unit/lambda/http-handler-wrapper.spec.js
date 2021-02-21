@@ -1,4 +1,4 @@
-const handlerWrapper = require('../../../lambdas/libs/http-handler-wrapper');
+const handlerWrapper = require('../../../../lambdas/libs/http-handler-wrapper');
 
 describe('handlerWrapper', () => {
   it('should pass the event and context to the wrapped function', async () => {
