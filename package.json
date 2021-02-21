@@ -5,8 +5,12 @@
   "engines": {
     "node": ">=12"
   },
+  "private": true,
   "devDependencies": {
     "@aws-cdk/assert": "^1.90.1",
+    "@aws-cdk/aws-iam": "^1.90.1",
+    "@aws-cdk/aws-lambda": "^1.90.1",
+    "@aws-cdk/aws-lambda-nodejs": "^1.90.1",
     "@aws-cdk/core": "^1.90.1",
     "@types/jest": "^26.0.14",
     "@zeit/ncc": "^0.22.3",

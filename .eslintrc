@@ -17,11 +17,6 @@
   "rules": {
     "prettier/prettier": "error",
     "no-console": "off",
-    "node/no-unpublished-require": [
-      "error",
-      {
-        "allowModules": ["aws-sdk", "@aws-cdk"]
-      }
-    ]
+    "node/no-unpublished-require": "off"
   }
 }
