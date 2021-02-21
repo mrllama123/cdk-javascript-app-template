@@ -23,6 +23,10 @@ const createNodejsLambda = ({
     maxEventAge,
     retryAttempts,
   });
+  // add xray permissions
+  lambda.addToRolePolicy(
+    createPolicy(['xray:PutTraceSegments', 'xray:PutTelemetryRecords'], ['*']),
+  );
   polices.forEach((policy) => assignPolicyToLambda(lambda, policy));
   return lambda;
 };
