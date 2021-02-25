@@ -15,7 +15,6 @@
     "@aws-cdk/aws-lambda-nodejs": "^1.90.1",
     "@aws-cdk/core": "^1.90.1",
     "@types/jest": "^26.0.14",
-    "@zeit/ncc": "^0.22.3",
     "aws-cdk": "^1.90.1",
     "aws-sdk": "^2.761.0",
     "eslint": "^7.10.0",
@@ -27,11 +26,7 @@
     "husky": "^4.3.0",
     "jest": "^26.4.2",
     "lint-staged": "^10.4.0",
-    "prettier": "^2.1.2",
-    "serverless-iam-roles-per-function": "^2.0.2",
-    "serverless-plugin-ncc": "^0.4.0",
-    "serverless-plugin-warmup": "^4.9.0",
-    "serverless-prune-plugin": "^1.4.3"
+    "prettier": "^2.1.2"
   },
   "dependencies": {
     "aws-xray-sdk-core": "^3.2.0"
