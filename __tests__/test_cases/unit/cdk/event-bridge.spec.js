@@ -5,14 +5,8 @@ const {
 } = require('../../../../libs-cdk/stacks/event-bridge');
 
 describe('event bridge stack', () => {
-  let app = null;
-  let stack = null;
-
-  beforeAll(() => {
-    console.log('creating stack');
-    app = new cdk.App();
-    stack = new EventBridgeLambdaStack(app, 'testStack');
-  });
+  const app = new cdk.App();
+  const stack = new EventBridgeLambdaStack(app, 'testStack');
 
   it('should have a lambda in stack', () => {
     expect(stack).to(
