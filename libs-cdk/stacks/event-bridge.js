@@ -1,5 +1,5 @@
 const cdk = require('@aws-cdk/core');
-const { createNodejsLambda } = require('../components/lambda');
+const { lambda } = require('@mrllama123/cdk-common-config');
 
 class EventBridgeLambdaStack extends cdk.Stack {
   /**
@@ -10,11 +10,11 @@ class EventBridgeLambdaStack extends cdk.Stack {
    */
   constructor(scope, id, props) {
     super(scope, id, props);
-    createNodejsLambda({
-      stack: this,
-      lambdaName: `${this.node.tryGetContext('stage')}-example-eventbridge`,
-      lambdaCodePath: 'lambdas/example-eventbridge.js',
-    });
+    lambda.createNodejsLambda(
+      this,
+      `${this.node.tryGetContext('stage')}-example-eventbridge`,
+      'lambdas/example-eventbridge.js',
+    );
   }
 }
 

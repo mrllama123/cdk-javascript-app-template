@@ -367,7 +367,7 @@
     "@aws-cdk/custom-resources" "1.91.0"
     constructs "^3.2.0"
 
-"@aws-cdk/aws-events@1.91.0", "@aws-cdk/aws-events@^1.90.1":
+"@aws-cdk/aws-events@1.91.0", "@aws-cdk/aws-events@^1.90.1", "@aws-cdk/aws-events@^1.91.0":
   version "1.91.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-events/-/aws-events-1.91.0.tgz#02a19ff1ddf686c91f68c801efc05d3e5c68a8d7"
   integrity sha512-t8LSGahCTPgIBUKk1N0Bx35Xvc0nhSHxchtckjXgEBYun6w+85YA5eU9/gTZrpOqTwXt2CbZBDrbem86zsnj8g==
@@ -376,7 +376,7 @@
     "@aws-cdk/core" "1.91.0"
     constructs "^3.2.0"
 
-"@aws-cdk/aws-iam@1.91.0", "@aws-cdk/aws-iam@^1.90.1":
+"@aws-cdk/aws-iam@1.91.0", "@aws-cdk/aws-iam@^1.90.1", "@aws-cdk/aws-iam@^1.91.0":
   version "1.91.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-iam/-/aws-iam-1.91.0.tgz#642a24321b5d0bfabdced48297b08dae3a455574"
   integrity sha512-5+poD3JCrBEsE6n1jLLnE81Yp4Qs7aY+TKo+CaHfaaiBozyTZA+yavEvuYQ3QiIJmswRziWMxZ/24uGUcPHH4A==
@@ -414,7 +414,7 @@
     "@aws-cdk/cx-api" "1.91.0"
     constructs "^3.2.0"
 
-"@aws-cdk/aws-lambda-nodejs@^1.90.1":
+"@aws-cdk/aws-lambda-nodejs@^1.90.1", "@aws-cdk/aws-lambda-nodejs@^1.91.0":
   version "1.91.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-lambda-nodejs/-/aws-lambda-nodejs-1.91.0.tgz#e75a747fda89f468e4c0cd61d59694abeef40cbd"
   integrity sha512-5kFxXBaW5mAstzf+GXZ+NKV9zT4c8g/7g1jaU7w3YI6jFMjB4H2JgjVGv74Et04ddov97rDad/KMEtm6uJxoAA==
@@ -423,7 +423,7 @@
     "@aws-cdk/core" "1.91.0"
     constructs "^3.2.0"
 
-"@aws-cdk/aws-lambda@1.91.0", "@aws-cdk/aws-lambda@^1.90.1":
+"@aws-cdk/aws-lambda@1.91.0", "@aws-cdk/aws-lambda@^1.90.1", "@aws-cdk/aws-lambda@^1.91.0":
   version "1.91.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-lambda/-/aws-lambda-1.91.0.tgz#d5a85a54a3370b183c6a39579f70693962be8380"
   integrity sha512-8wcrpdKi1XR7LmP3I5zfOSoKDa8eSV+zfugJATXGoawrhfLgMff28j/wuphqjbGZzmHGNyCWaCfQmusy9voZsw==
@@ -1194,6 +1194,17 @@
     "@types/node" "*"
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
+
+"@mrllama123/cdk-common-config@1.0.5":
+  version "1.0.5"
+  resolved "https://npm.pkg.github.com/download/@mrllama123/cdk-common-config/1.0.5/41d7f2d57907f925f5db577fbf37539b8b55b8c6da519b3633860311fe9cd9e4#8dff6c89e2f1f84b57b0e913a30a2c73474b7ff8"
+  integrity sha512-Khh7Uo9pAbbeb9ufK3ps1d0e2g6zGdoL36c0GHoWB4sW/hg6uYi8DyUtZ3iwzriOlIHpwCzgTaEUSZYQBnJgbg==
+  dependencies:
+    "@aws-cdk/aws-events" "^1.91.0"
+    "@aws-cdk/aws-events-targets" "^1.91.0"
+    "@aws-cdk/aws-iam" "^1.91.0"
+    "@aws-cdk/aws-lambda" "^1.91.0"
+    "@aws-cdk/aws-lambda-nodejs" "^1.91.0"
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.2"
@@ -2352,6 +2363,11 @@ es5-ext@0.8.x:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/es5-ext/-/es5-ext-0.8.2.tgz#aba8d9e1943a895ac96837a62a39b3f55ecd94ab"
   integrity sha1-q6jZ4ZQ6iVrJaDemKjmz9V7NlKs=
+
+esbuild@0:
+  version "0.8.53"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.8.53.tgz#b408bb0ca1b29dab13d8bbf7d59f59afe6776e86"
+  integrity sha512-GIaYGdMukH58hu+lf07XWAeESBYFAsz8fXnrylHDCbBXKOSNtFmoYA8PhSeSF+3/qzeJ0VjzV9AkLURo5yfu3g==
 
 escalade@^3.1.1:
   version "3.1.1"
